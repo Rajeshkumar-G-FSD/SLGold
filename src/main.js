@@ -13,6 +13,7 @@ const loadingScreen = document.getElementById('loadingScreen');
 const loadingBar = document.getElementById('loadingBar');
 const loadingText = document.getElementById('loadingText');
 const heroOverlay = document.getElementById('heroOverlay');
+const heroBrandLine = document.getElementById('heroBrandLine');
 const frameProgressBar = document.getElementById('frameProgressBar');
 const siteHeader = document.getElementById('siteHeader');
 const heroSection = document.getElementById('hero');
@@ -81,8 +82,15 @@ function animateFrame() {
     const progress = currentFrameIndex / (FRAME_COUNT - 1);
     frameProgressBar.style.width = `${progress * 100}%`;
 
-    // Fade out hero text overlay once animation has started
-    if (progress > 0.04) {
+    // Brand line exits first — as soon as girl starts appearing (~2%)
+    if (progress > 0.02) {
+        heroBrandLine.classList.add('exit');
+    } else {
+        heroBrandLine.classList.remove('exit');
+    }
+
+    // Full overlay fades slightly after brand line leaves
+    if (progress > 0.05) {
         heroOverlay.classList.add('faded');
     } else {
         heroOverlay.classList.remove('faded');
