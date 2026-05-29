@@ -593,8 +593,13 @@ body {
 
 .footer-copy {
     font-size: 0.75rem;
-    color: var(--text-muted);
+    color: #f7f2ec;
     letter-spacing: 1px;
+}
+
+.footer-copy a {
+    color: inherit;
+    text-decoration: underline;
 }
 
 /* ============================================
