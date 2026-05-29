@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLGold — Premium Gold Collection</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/style.css">
+</head>
+<body>
+
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-inner">
+            <div class="loading-logo">SLGold</div>
+            <div class="loading-bar-wrap">
+                <div class="loading-bar" id="loadingBar"></div>
+            </div>
+            <div class="loading-text" id="loadingText">Loading experience...</div>
+        </div>
+    </div>
+
+    <!-- Fixed Header -->
+    <header class="site-header" id="siteHeader">
+        <div class="header-inner">
+            <div class="logo">
+                <img src="/images/ssllogo.jpg" alt="SLGold" class="logo-img">
+            </div>
+            <nav class="nav">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#products" class="nav-link">Products</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+            <div class="nav-cta">
+                <a href="#contact" class="cta-btn">Enquire</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section: tall for scroll-pin animation -->
+    <section id="hero" class="hero-section">
+        <div class="hero-sticky">
+            <canvas id="heroCanvas" class="hero-canvas"></canvas>
+
+            <!-- Initial overlay (fades on scroll) -->
+            <div class="hero-overlay" id="heroOverlay">
+                <div class="hero-content">
+                    <p class="hero-tagline">Est. 2024</p>
+                    <h1 class="hero-title">Pure Gold.<br>Timeless Grace.</h1>
+                    <p class="hero-subtitle">Scroll to discover our craft</p>
+                    <div class="scroll-indicator">
+                        <div class="scroll-line"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Progress indicator -->
+            <div class="frame-progress" id="frameProgress">
+                <div class="frame-progress-bar" id="frameProgressBar"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="page-section about-section">
+        <div class="section-inner">
+            <div class="section-label">About Us</div>
+            <h2 class="section-title">Crafted with<br><em>Generations of Mastery</em></h2>
+            <div class="section-body">
+                <p>SLGold is born from a passion for purity and precision. Every piece in our collection is handcrafted by master artisans who carry forward generations of goldsmithing tradition — combining ancient techniques with modern elegance.</p>
+                <p>We source only the finest 22k and 24k gold, ensuring that each jewel that leaves our workshop is a testament to uncompromising quality and soul-deep craftsmanship.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat">
+                    <span class="stat-num">22K</span>
+                    <span class="stat-label">Pure Gold</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">500+</span>
+                    <span class="stat-label">Unique Designs</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-num">25+</span>
+                    <span class="stat-label">Years Heritage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Section -->
+    <section id="products" class="page-section products-section">
+        <div class="section-inner">
+            <div class="section-label">Our Collection</div>
+            <h2 class="section-title">Signature<br><em>Pieces</em></h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">◈</div>
+                    <h3>Bridal Sets</h3>
+                    <p>Complete bridal jewellery curated for your most special day.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">◇</div>
+                    <h3>Necklaces</h3>
+                    <p>Timeless necklace designs ranging from delicate chains to statement chokers.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">◆</div>
+                    <h3>Bangles &amp; Kadas</h3>
+                    <p>Traditional and contemporary bangles forged in purest gold.</p>
+                </div>
+                <div class="product-card">
+                    <div class="product-icon">✦</div>
+                    <h3>Rings &amp; Earrings</h3>
+                    <p>Exquisitely designed rings and earrings for every occasion.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="page-section contact-section">
+        <div class="section-inner">
+            <div class="section-label">Get in Touch</div>
+            <h2 class="section-title">Visit Our<br><em>Showroom</em></h2>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon">◎</span>
+                        <div>
+                            <strong>Address</strong>
+                            <p>SLGold Jewellers, MG Road,<br>Bengaluru, Karnataka 560001</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">◎</span>
+                        <div>
+                            <strong>Hours</strong>
+                            <p>Mon – Sat: 10am – 8pm<br>Sunday: 11am – 6pm</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon">◎</span>
+                        <div>
+                            <strong>Contact</strong>
+                            <p>+91 98765 43210<br>hello@slgold.in</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Your Name" class="form-input">
+                    <input type="email" placeholder="Email Address" class="form-input">
+                    <textarea placeholder="Your Message" class="form-input form-textarea"></textarea>
+                    <button type="submit" class="form-submit">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-logo">
+                <img src="/images/ssllogo.jpg" alt="SLGold" class="footer-logo-img">
+            </div>
+            <p class="footer-copy">© 2024 SLGold. All rights reserved. Crafted with gold.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+</body>
+</html>
