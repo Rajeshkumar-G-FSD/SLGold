@@ -33,7 +33,9 @@ function resizeCanvas() {
     renderFrame(currentFrameIndex);
 }
 
-// ─── Draw a single frame (cover-fit, like CSS background-size: cover) ────────
+// ─── Draw a single frame ──────────────────────────────────────────────────────
+
+const HEADER_H = 72; // matches --header-h in CSS
 
 function renderFrame(index) {
     const img = frames[index];
@@ -44,13 +46,28 @@ function renderFrame(index) {
     const iw = img.naturalWidth;
     const ih = img.naturalHeight;
 
-    const scale = Math.max(cw / iw, ch / ih);
-    const sw = iw * scale;
-    const sh = ih * scale;
-    const sx = (cw - sw) / 2;
-    const sy = (ch - sh) / 2;
+    const isMobilePortrait = cw < 768 && ch > cw;
 
-    ctx.drawImage(img, sx, sy, sw, sh);
+    if (isMobilePortrait) {
+        // Portrait mobile: take a portrait-aspect crop from the TOP-CENTER of the
+        // landscape frame (where the face is), and render it into the usable area
+        // below the fixed header so the full face is never hidden under the nav.
+        const usableH = ch - HEADER_H;
+        const srcAspect = cw / usableH;          // portrait ratio of usable canvas
+        const srcW = Math.round(ih * srcAspect); // how wide a slice of the source
+        const srcX = Math.round((iw - srcW) / 2); // center-crop horizontally
+        // Draw source (srcX, 0, srcW, ih) → dest (0, HEADER_H, cw, usableH)
+        ctx.clearRect(0, 0, cw, ch);
+        ctx.drawImage(img, srcX, 0, srcW, ih, 0, HEADER_H, cw, usableH);
+    } else {
+        // Desktop: standard cover-fit, vertically centered
+        const scale = Math.max(cw / iw, ch / ih);
+        const sw = iw * scale;
+        const sh = ih * scale;
+        const sx = (cw - sw) / 2;
+        const sy = (ch - sh) / 2;
+        ctx.drawImage(img, sx, sy, sw, sh);
+    }
 }
 
 // ─── Smooth animation loop (lerp between frames for silky motion) ─────────────
